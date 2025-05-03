@@ -1,7 +1,7 @@
 streamlit
 langchain
 openai
-chromadb
+chromadb==0.3.22
 tiktoken
 langchain-community
 protobuf==3.20.3
