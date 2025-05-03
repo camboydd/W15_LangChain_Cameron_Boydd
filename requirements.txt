@@ -4,3 +4,4 @@ opentelemetry-api
 protobuf==3.19.6
 streamlit
 openai
+pysqlite3-binary
