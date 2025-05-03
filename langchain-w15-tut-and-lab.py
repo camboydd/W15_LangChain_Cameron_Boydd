@@ -4,10 +4,11 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-import sqlite3
 import pysqlite3  # Import pysqlite3 to override the default sqlite3
 
-sqlite3 = pysqlite3.dbapi2  # Override the sqlite3 module
+# Override the sqlite3 module
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 def generate_response(uploaded_file, openai_api_key, query_text):
     # Load and read uploaded document
@@ -36,6 +37,7 @@ def generate_response(uploaded_file, openai_api_key, query_text):
 
         # Return the response to the query
         return qa.run(query_text)
+
 # Set page title and header
 st.set_page_config(page_title='🦜🦜 Ask the Doc App')
 st.title('🦜🦜 Ask the Doc App')
