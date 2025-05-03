@@ -5,9 +5,9 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 import pysqlite3  # Import pysqlite3 to override the default sqlite3
+import sys
 
 # Override the sqlite3 module
-import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 def generate_response(uploaded_file, openai_api_key, query_text):
