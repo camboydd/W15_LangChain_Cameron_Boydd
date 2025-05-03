@@ -1,7 +1,4 @@
-streamlit
-langchain
-openai
-chromadb==0.3.22
-tiktoken
-langchain-community
-protobuf==3.20.3
+streamlit==1.18.1
+langchain==0.0.156
+chromadb==0.3.1
+openai==0.27.0
