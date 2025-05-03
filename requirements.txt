@@ -1,6 +1,6 @@
-chromadb==0.3.21
+chromadb
 langchain
 opentelemetry-api
-protobuf==3.20.0
+protobuf
 streamlit
 openai
